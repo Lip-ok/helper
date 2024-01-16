@@ -32,3 +32,11 @@ export const uniqueAlphaNumericId = (() => {
     return (length = 24) =>
         Array.from({ length }, () => heyStack[randomInt()]).join('');
 })();
+
+
+//  Для получения текущего времени в миллисекундах, 
+// преобразует его в строку с основанием 36 и затем добавляет случайное число, 
+// также преобразованное в строку с основанием 36
+export function uid(): string {
+  return (performance.now().toString(36) + Math.random().toString(36)).replace(/\./g, '');
+}
